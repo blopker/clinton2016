@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HILLARY 2016</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/main.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="logo">
+			<img src="assets/logo.png" alt="">
+		</div>
+	    <form class="form" id="form">
+	    	<h1>Hello John</h1>
+	        <input id="mail" type="text" autocomplete="off" required pattern="hillary4eva|bernieisadoofus" autofocus="true" class="big" placeholder="Password">
+	        <button type="submit">Sign in</button>
+		</form>
+	</div>
+	<script>
+		var email = document.getElementById("mail");
+		email.addEventListener("input", function (event) {
+		  if (email.validity.patternMismatch) {
+		    email.setCustomValidity("Password incorrect. Please provide a password.");
+		  } else if (email.validity.valueMissing) {
+		    email.setCustomValidity("Please provide a password.");
+		  } else {
+		    email.setCustomValidity("");
+		  }
+		});
+		var form = document.getElementById("form");
+		form.addEventListener("submit", function (event) {
+		  // Each time the user tries to send the data, we check
+		  // if the email field is valid.
+		  if (email.validity.valid) {
+		    window.location = "auth.html";
+		    event.preventDefault();
+		  }
+		}, false);
+	</script>
+</body>
+</html>

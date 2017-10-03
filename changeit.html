@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HILLARY 2016</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/main.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="logo">
+			<img src="assets/logo.png" alt="">
+		</div>
+	    <form class="form changeit" id="form">
+	    	<label for="">Enter new password</label>
+	        <input id="pass1" type="text" autocomplete="off" required autofocus="true">
+	        <br>
+	        <label for="">Re-enter new password</label>
+	        <input id="pass2" type="text" autocomplete="off" required>
+	        <button type="submit">Change password</button>
+		</form>
+	</div>
+	<script>
+		var pass1 = document.getElementById("pass1");
+		var pass2 = document.getElementById("pass2");
+		var form = document.getElementById("form");
+		form.addEventListener("submit", function (event) {
+		  // Each time the user tries to send the data, we check
+		  // if the email field is valid.
+		  if (pass1.validity.valid && pass2.validity.valid) {
+		    window.location = "success.html";
+		    event.preventDefault();
+		  }
+		}, false);
+	</script>
+</body>
+</html>
